@@ -65,6 +65,10 @@ const handleActivateSW = async e => {
 			if (key.includes('static') && key !== STATIC_CACHE_NAME) {
 				return caches.delete(key)
 			}
+
+			if (  key.includes('dynamic') && key !== DYNAMIC_CACHE_NAME ) {
+                return caches.delete(key);
+            }
 		})
 	})
 
